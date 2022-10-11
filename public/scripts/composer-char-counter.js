@@ -8,9 +8,9 @@ $(document).ready(() => {
     const length = txt.val().length;
     const counter = txt.parent('form').find('.counter').val(140 - length);
     if (counter.val() < 0) {
-      counter.css('color', 'red');
+      counter.addClass('invalidCount');
     } else {
-      counter.css('color', '');
+      counter.removeClass('invalidCount')
     }
   });
 });
