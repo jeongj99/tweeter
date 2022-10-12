@@ -69,6 +69,7 @@ $(document).ready(() => {
       })
         .then(() => {
           text.val('');
+          form.find('.counter').val(140);
           $('article.tweet').remove();
           loadTweets();
         });
