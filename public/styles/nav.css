@@ -1,9 +1,10 @@
-nav {
+.navbar-top {
   height: 120px;
   position: fixed;
   top: 0px;
   left: 0px;
   width: 100%;
+  padding: 0 1.5em;
   background-color: #4056A1;
   color: #FFF;
   display: flex;
@@ -11,20 +12,24 @@ nav {
   align-items: center;
 }
 
-nav span {
+.navbar-logo {
   font-family: 'Bungee', sans-serif;
-  margin: 0 1.5em 0;
+  margin-top: 1em;
 }
 
-nav span h2 {
+/* .navbar-logo h2 {
   margin-bottom: 0;
-}
+} */
 
-.nav-tweet {
-  margin: 1.5em 1.5em 0;
+.navbar-menu {
+  /* margin: 1.5em 1.5em 0; */
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.fa-angles-down {
+.navbar-menu i {
   color: red;
+  margin-top: -20px;
 }
