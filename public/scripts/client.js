@@ -7,13 +7,12 @@
 $(document).ready(() => {
   const renderTweets = tweets => {
     for (const tweet of tweets) {
-      $('.container').append(createTweetElement(tweet));
+      $('.new-tweet').after(createTweetElement(tweet));
     }
   };
 
   const createTweetElement = tweet => {
     const { user, content, created_at } = tweet;
-    // const dateCreated = Math.floor((Date.now() - created_at) / (1000 * 36000 * 24)); //change later
 
     const tweetContainer = `
     <article class="tweet">
@@ -26,8 +25,8 @@ $(document).ready(() => {
           ${user.handle}
         </div>
       </header>
-      <div>
-        <p class="tweet">${content.text}</p>
+      <div class="tweet">
+        <p>${content.text}</p>
       </div>
       <footer>
         <p>${timeago.format(created_at)}</p>
@@ -62,8 +61,12 @@ $(document).ready(() => {
         method: 'POST',
         url: '/tweets',
         data: serialized
-      });
-      text.val('');
+      })
+        .then(() => {
+          text.val('');
+          $('article.tweet').remove();
+          loadTweets();
+        });
     }
   });
 });
