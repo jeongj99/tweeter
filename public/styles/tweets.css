@@ -1,0 +1,79 @@
+article.tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: #545149 4px solid;
+  margin: 2em 0;
+}
+
+article.tweet:hover{
+  box-shadow: 5px 5px #839bec;
+}
+
+article.tweet header {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 1.75em;
+  margin-top: 1em;
+}
+
+article.tweet header div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: bold;
+}
+
+article.tweet header .handler {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  color: #989eb4;
+  font-weight: lighter;
+}
+
+article.tweet img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+article.tweet > div {
+  width: 97%;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: #545149 4px solid;
+}
+
+article.tweet p {
+  padding: 0 0.75em 0;
+}
+
+article.tweet footer {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: medium;
+}
+
+article.tweet footer div {
+  width: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+article.tweet footer .fa-sharp {
+  color: #4056A1;
+}
+
+article.tweet footer .fa-sharp:hover {
+  color: #FF7F50;
+}
