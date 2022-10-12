@@ -14,8 +14,8 @@ $(document).ready(() => {
   const createTweetElement = tweet => {
     const { user, content, created_at } = tweet;
 
-    const tweetContainer = `
-    <article class="tweet">
+    let $tweetContainer = $('<article class="tweet">');
+    const $header = $(`
       <header>
         <div>
           <img src="${user.avatars}">
@@ -24,21 +24,26 @@ $(document).ready(() => {
         <div class="handler">
           ${user.handle}
         </div>
-      </header>
-      <div class="tweet">
-        <p>${content.text}</p>
-      </div>
+      </header>`);
+    const $middle = $('<div class="tweet">');
+    const $tweet = $('<p>');
+    $tweet.text(content.text);
+    $middle.append($tweet);
+    const $footer = $(`
       <footer>
         <p>${timeago.format(created_at)}</p>
-        <div class="icons">
-          <i class="fa-sharp fa-solid fa-flag"></i>
-          <i class="fa-sharp fa-solid fa-retweet"></i>
-          <i class="fa-sharp fa-solid fa-heart"></i>
-        </div>
+          <div class="icons">
+            <i class="fa-sharp fa-solid fa-flag"></i>
+            <i class="fa-sharp fa-solid fa-retweet"></i>
+            <i class="fa-sharp fa-solid fa-heart"></i>
+          </div>
       </footer>
-    </article>
-  `;
-    return tweetContainer;
+    `);
+    $tweetContainer.append($header);
+    $tweetContainer.append($middle);
+    $tweetContainer.append($footer);
+
+    return $tweetContainer;
   };
 
   const loadTweets = () => {
