@@ -5,6 +5,7 @@
  */
 
 $(document).ready(() => {
+
   const renderTweets = tweets => {
     for (const tweet of tweets) {
       $('.new-tweet').after(createTweetElement(tweet));
@@ -52,6 +53,11 @@ $(document).ready(() => {
   };
   loadTweets();
 
+  const loadNewTweet = () => {
+    $.ajax({ url: '/tweets', method: 'GET' })
+      .then((res) => renderTweets([res[res.length - 1]]));
+  };
+
   $('.tweet-form').submit(function(event) {
     event.preventDefault();
     $('.error').slideUp();
@@ -59,14 +65,10 @@ $(document).ready(() => {
     const form = $(this);
     const text = form.find('#tweet-text');
     if (text.val().length > 140) {
-      $('.error p').append($('<i class="fa-solid fa-triangle-exclamation"></i>'));
       $('.error p').append('Your tweet exceeds the character limit of 140!');
-      $('.error p').append($('<i class="fa-solid fa-triangle-exclamation"></i>'));
       $('.error').slideDown();
     } else if (text.val() === '' || text.val() === null) {
-      $('.error p').append($('<i class="fa-solid fa-triangle-exclamation"></i>'));
       $('.error p').append('Your tweet is empty!');
-      $('.error p').append($('<i class="fa-solid fa-triangle-exclamation"></i>'));
       $('.error').slideDown();
     } else {
       const serialized = form.serialize();
@@ -78,9 +80,26 @@ $(document).ready(() => {
         .then(() => {
           text.val('');
           form.find('.counter').val(140);
-          $('article.tweet').remove();
-          loadTweets();
+          // $('article.tweet').remove();
+          loadNewTweet();
         });
     }
+  });
+
+
+  $('.navbar-menu').hover(
+    function() {
+      const icon = $(this).find('i');
+      icon.addClass('hovering');
+    }, function() {
+      const icon = $(this).find('i');
+      icon.removeClass('hovering');
+    }
+  );
+
+  $('.navbar-menu').click(function() {
+    $('html, body').animate({
+      scrollTop: 400
+    }, 2000);
   });
 });

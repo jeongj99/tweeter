@@ -17,19 +17,31 @@
   margin-top: 1em;
 }
 
-/* .navbar-logo h2 {
-  margin-bottom: 0;
-} */
-
 .navbar-menu {
-  /* margin: 1.5em 1.5em 0; */
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.navbar-menu:hover {
+  cursor: pointer;
+}
+
+.navbar-menu i.hovering {
+  animation: updown 0.8s ease infinite;
+}
+
 .navbar-menu i {
   color: red;
   margin-top: -20px;
+}
+
+@keyframes updown {
+  from {
+    transform: translateY(-4px);
+  }
+  to {
+    transform: translateY(4px);
+  }
 }
