@@ -43,7 +43,7 @@ article.tweet img {
   max-height: 100%;
 }
 
-article.tweet > div {
+div.tweet {
   width: 97%;
   display: flex;
   justify-content: flex-start;
@@ -52,6 +52,11 @@ article.tweet > div {
 
 article.tweet p {
   padding: 0 0.75em 0;
+}
+
+div.tweet p {
+  width: 100%;
+  word-wrap: break-word;
 }
 
 article.tweet footer {

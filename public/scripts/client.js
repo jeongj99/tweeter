@@ -54,12 +54,20 @@ $(document).ready(() => {
 
   $('.tweet-form').submit(function(event) {
     event.preventDefault();
+    $('.error').slideUp();
+    $('.error p').empty();
     const form = $(this);
     const text = form.find('#tweet-text');
     if (text.val().length > 140) {
-      alert('Your tweet exceeds the character limit of 140!');
+      $('.error p').append($('<i class="fa-solid fa-triangle-exclamation"></i>'));
+      $('.error p').append('Your tweet exceeds the character limit of 140!');
+      $('.error p').append($('<i class="fa-solid fa-triangle-exclamation"></i>'));
+      $('.error').slideDown();
     } else if (text.val() === '' || text.val() === null) {
-      alert('Your tweet is empty!');
+      $('.error p').append($('<i class="fa-solid fa-triangle-exclamation"></i>'));
+      $('.error p').append('Your tweet is empty!');
+      $('.error p').append($('<i class="fa-solid fa-triangle-exclamation"></i>'));
+      $('.error').slideDown();
     } else {
       const serialized = form.serialize();
       $.ajax({

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 0 0.5em 2em;
+  margin: 2em 0;
 }
 
 .new-tweet form {
@@ -10,7 +10,8 @@
   display: flex;
   flex-direction: column;
   font-weight: bold;
-
+  margin-top: 2em;
+  padding: 0 0.5em;
 }
 
 .new-tweet form div {
@@ -30,6 +31,10 @@
   font-size: large;
 }
 
+.new-tweet form button:hover {
+  border:#8ca1e5 2px solid
+}
+
 
 #tweet-text {
   background: transparent;
@@ -41,5 +46,21 @@
 }
 
 .invalidCount {
-  color:red;
+  color: red;
+}
+
+.error {
+  align-items: center;
+  width: 100%;
+  color: red;
+  border: red 4px solid;
+  display: none;
+}
+
+.error p {
+  padding: 0 0.25em;
+}
+
+.fa-triangle-exclamation {
+  padding: 0 1em;
 }
