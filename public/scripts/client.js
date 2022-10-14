@@ -1,5 +1,5 @@
 // Every function that occurs inside the document ready will run after the html of documents found in index.html are loaded
-$(document).ready(() => {
+$(document).ready(function() {
 
   /*
   A function that goes through each tweet object from the tweets arrays from the database containing the tweets
@@ -99,26 +99,5 @@ $(document).ready(() => {
           loadNewTweet(); // The loadNewTweet function is called to load the new tweet without refreshing
         });
     }
-  });
-
-
-  $('.navbar-menu').hover(
-    function() {
-      const icon = $(this).find('i');
-      icon.addClass('hovering');
-    }, function() {
-      const icon = $(this).find('i');
-      icon.removeClass('hovering');
-    }
-  );
-
-  $('.navbar-menu').click(function() {
-    $('.new-tweet').slideToggle();
-    $('.new-tweet').find('#tweet-text').focus();
-  });
-
-  $(document).scroll(function() {
-    const navbar = $(document).find('.navbar-top');
-    navbar.toggleClass('scrolled', $(this).scrollTop() > navbar.height());
   });
 });

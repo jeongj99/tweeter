@@ -29,7 +29,8 @@
 }
 
 .new-tweet form button:hover {
-  border:#8ca1e5 2px solid
+  border:#8ca1e5 2px solid;
+  cursor: pointer;
 }
 
 
