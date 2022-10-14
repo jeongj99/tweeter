@@ -5,11 +5,15 @@
   left: 0px;
   width: 100%;
   padding: 0 1.5em;
-  background-color: #4056A1;
+  background-color: transparent;
   color: #FFF;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.scrolled {
+  background-color: #4056A1;
 }
 
 .navbar-logo {
@@ -18,7 +22,6 @@
 }
 
 .navbar-menu {
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,5 +46,17 @@
   }
   to {
     transform: translateY(4px);
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .navbar-menu p {
+    padding-bottom: 0.5em;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .navbar-top {
+    background-color: #4056A1;
   }
 }

@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 2em 0;
 }
 
 .new-tweet form {
@@ -10,7 +9,7 @@
   display: flex;
   flex-direction: column;
   font-weight: bold;
-  margin-top: 2em;
+  margin-top: 1.5em;
   padding: 0 0.5em;
 }
 
@@ -28,7 +27,6 @@
   padding: 5px 12px;
   background-color: #4056A1;
   border: 0;
-  font-size: large;
 }
 
 .new-tweet form button:hover {
@@ -39,9 +37,8 @@
 #tweet-text {
   background: transparent;
   resize: none;
-  font-size: smaller;
   border: 0;
-  border-bottom: #545149 4px solid;
+  border-bottom: #545149 0.2em solid;
   outline: none;
 }
 
@@ -50,13 +47,22 @@
 }
 
 .error {
+  display: none;
+  margin-top: 1em;
+  width: auto;
   align-items: center;
-  width: 100%;
   color: red;
   border: red 4px solid;
-  display: none;
 }
 
 .error p {
-  padding: 0 0.25em;
+  padding: 0 1em;
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 1024px) {
+  .new-tweet form {
+    margin-top: 0;
+    padding-top: 3em;
+  }
 }

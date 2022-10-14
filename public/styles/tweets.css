@@ -2,7 +2,7 @@ article.tweet {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: #545149 4px solid;
+  border: #545149 0.2em solid;
   margin: 2em 0;
 }
 
@@ -47,7 +47,7 @@ div.tweet {
   width: 97%;
   display: flex;
   justify-content: flex-start;
-  border-bottom: #545149 4px solid;
+  border-bottom: #545149 2px solid;
 }
 
 article.tweet p {
@@ -64,21 +64,30 @@ article.tweet footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-size: medium;
+  font-size: 1em;
 }
 
-article.tweet footer div {
+.icons {
   width: 15%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-right: 0.8em;
 }
 
 article.tweet footer .fa-sharp {
+  font-size: 1em;
+  padding: 0 0.2em;
   color: #4056A1;
 }
 
 article.tweet footer .fa-sharp:hover {
   color: #FF7F50;
+}
+
+@media only screen and (max-width: 450px) {
+  article.tweet footer .fa-sharp {
+    font-size: 12px;
+  }
 }

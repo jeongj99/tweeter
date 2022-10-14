@@ -29,3 +29,17 @@ body {
   width: 90%;
   margin: 0 auto;
 }
+
+@media only screen and (max-width: 450px) {
+  body {
+    font-size: 5vw;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .container {
+    width: 50%;
+    margin: 120px 1.5em;
+    float: right;
+  }
+}

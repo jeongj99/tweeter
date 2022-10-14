@@ -80,7 +80,6 @@ $(document).ready(() => {
         .then(() => {
           text.val('');
           form.find('.counter').val(140);
-          // $('article.tweet').remove();
           loadNewTweet();
         });
     }
@@ -102,4 +101,11 @@ $(document).ready(() => {
       scrollTop: 400
     }, 2000);
   });
+
+  $(document).scroll(function() {
+    const navbar = $(document).find('.navbar-top');
+    navbar.toggleClass('scrolled', $(this).scrollTop() > navbar.height());
+
+  });
+
 });
