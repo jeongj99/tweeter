@@ -20,7 +20,7 @@ $(document).ready(function() {
 
     const $header = $(`
       <header>
-        <div>
+        <div class="tweet-avatar">
           <img src="${user.avatars}">
           <p>${user.name}</p>
         </div>

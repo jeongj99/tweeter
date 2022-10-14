@@ -1,3 +1,4 @@
+/* CSS stylesheet for the header */
 .header {
   height: 520px;
   display: flex;
@@ -5,7 +6,7 @@
   justify-content: flex-end;
   align-items: center;
   background-color: #FF7F50;
-  background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
+  background-image: url('https://www.transparenttextures.com/patterns/brick-wall.png');
 }
 
 .header-avatar {
@@ -21,6 +22,7 @@
   color: #f4f1ec;
 }
 
+/* CSS stylesheet for the header when the display width is greater than 1024px */
 @media only screen and (min-width: 1024px) {
   .header {
     height: 420px;

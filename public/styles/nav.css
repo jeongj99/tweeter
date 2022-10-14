@@ -40,6 +40,7 @@
   margin-top: -20px;
 }
 
+/* Creates the updown animation (moves up and down) */
 @keyframes updown {
   from {
     transform: translateY(-4px);
@@ -49,12 +50,13 @@
   }
 }
 
+/* CSS stylesheet when the display width is less than 450px */
 @media only screen and (max-width: 450px) {
   .navbar-menu p {
     padding-bottom: 0.5em;
   }
 }
-
+/* CSS stylesheet when the display width is greater than 1024px */
 @media only screen and (min-width: 1024px) {
   .navbar-top {
     background-color: #4056A1;

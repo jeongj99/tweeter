@@ -7,6 +7,6 @@ $(document).ready(() => {
     const txt = $(`#${this.id}`);
     const length = txt.val().length;
     const counter = txt.parent('form').find('.counter').val(140 - length);
-    counter.toggleClass('invalidCount', counter.val() < 0);
+    counter.toggleClass('invalidCount', counter.val() < 0); // Adds invalidCount class if the value of counter is less than 0 and vice versa
   });
 });

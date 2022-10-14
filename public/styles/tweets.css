@@ -19,7 +19,7 @@ article.tweet header {
   margin-top: 1em;
 }
 
-article.tweet header div {
+.tweet-avatar {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -28,7 +28,16 @@ article.tweet header div {
   font-weight: bold;
 }
 
-article.tweet header .handler {
+article.tweet img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.tweet-avatar p {
+  padding: 0 0.75em 0;
+}
+
+article.tweet .handler {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -38,20 +47,11 @@ article.tweet header .handler {
   font-weight: lighter;
 }
 
-article.tweet img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
 div.tweet {
   width: 97%;
   display: flex;
   justify-content: flex-start;
   border-bottom: #545149 2px solid;
-}
-
-article.tweet p {
-  padding: 0 0.75em 0;
 }
 
 div.tweet p {
@@ -76,16 +76,17 @@ article.tweet footer {
   margin-right: 0.8em;
 }
 
-article.tweet footer .fa-sharp {
+article.tweet footer i {
   font-size: 1em;
   padding: 0 0.2em;
   color: #4056A1;
 }
 
-article.tweet footer .fa-sharp:hover {
+article.tweet footer i:hover {
   color: #FF7F50;
 }
 
+/* CSS stylesheet when the display width is less than 450px */
 @media only screen and (max-width: 450px) {
   article.tweet footer .fa-sharp {
     font-size: 12px;

@@ -33,6 +33,7 @@ body {
   margin: 0 auto;
 }
 
+/* IDs and classes for the toggle button that scrolls to the top on click */
 #scroll-up {
   font-size: 2em;
   position: fixed;
@@ -55,12 +56,14 @@ body {
   color: #FFF;
 }
 
+/* CSS stylesheet when the display width is less than 450px */
 @media only screen and (max-width: 450px) {
   body {
     font-size: 5vw;
   }
 }
 
+/* CSS stylesheet when the display width is greater than 1024px */
 @media only screen and (min-width: 1024px) {
   .container {
     width: 50%;
