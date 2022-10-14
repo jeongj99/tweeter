@@ -7,9 +7,9 @@ You can type in tweets and they will display without refreshing. The navbar has 
 This repository was a starter code for the project: I forked and clone this repository, then built upon it to practice my HTML, CSS, JS, jQuery and AJAX front-end skills. Node, Express back-end skills were already part of the template.
 
 ## Screenshots
-!["Screenshot of the page when display width is greater than 1024px"](https://github.com/jeongj99/tweeter/blob/master/docs/desktop-ver.png?raw=true)
-!["Screenshot of the page when display width is less than 1024px"](https://github.com/jeongj99/tweeter/blob/master/docs/mobile-ver.png?raw=true)
-!["Screenshot of the tweets"](https://github.com/jeongj99/tweeter/blob/master/docs/tweets.png?raw=true)
+!["Screenshot of the page when display width is greater than 1024px"](https://github.com/jeongj99/tweeter/blob/main/docs/desktop-ver.png?raw=true)
+!["Screenshot of the page when display width is less than 1024px"](https://github.com/jeongj99/tweeter/blob/main/docs/mobile-ver.png?raw=true)
+!["Screenshot of the tweets"](https://github.com/jeongj99/tweeter/blob/main/docs/tweets.png?raw=true)
 
 ## Dependencies
 - body-parser
