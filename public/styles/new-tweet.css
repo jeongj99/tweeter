@@ -1,10 +1,8 @@
-.container .new-tweet {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.new-tweet {
+  display: none;
 }
 
-.new-tweet form {
+.tweet-form {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -12,6 +10,7 @@
   margin-top: 1.5em;
   padding: 0 0.5em;
 }
+
 
 .new-tweet form div {
   display: flex;
@@ -61,7 +60,7 @@
 }
 
 @media only screen and (min-width: 1024px) {
-  .new-tweet form {
+  .tweet-form {
     margin-top: 0;
     padding-top: 3em;
   }

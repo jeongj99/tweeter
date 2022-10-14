@@ -1,5 +1,5 @@
 /*
-jquery that updates the character count based on what written in the text area
+jquery that updates the character count based on what is written in the text area
 Additionally, color changes  to red when counter is negative
 */
 $(document).ready(() => {
@@ -7,10 +7,6 @@ $(document).ready(() => {
     const txt = $(`#${this.id}`);
     const length = txt.val().length;
     const counter = txt.parent('form').find('.counter').val(140 - length);
-    if (counter.val() < 0) {
-      counter.addClass('invalidCount');
-    } else {
-      counter.removeClass('invalidCount')
-    }
+    counter.toggleClass('invalidCount', counter.val() < 0);
   });
 });

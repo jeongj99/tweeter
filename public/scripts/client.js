@@ -1,21 +1,23 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
+// Every function that occurs inside the document ready will run after the html of documents found in index.html are loaded
 $(document).ready(() => {
 
+  /*
+  A function that goes through each tweet object from the tweets arrays from the database containing the tweets
+  Uses the createTweetElement to create the html markups using jquery
+  */
   const renderTweets = tweets => {
     for (const tweet of tweets) {
       $('.new-tweet').after(createTweetElement(tweet));
     }
   };
 
+  // A function that receives a tweet object and creates an html markup using jquery
   const createTweetElement = tweet => {
+    // Destructuring the tweet object
     const { user, content, created_at } = tweet;
 
     let $tweetContainer = $('<article class="tweet">');
+
     const $header = $(`
       <header>
         <div>
@@ -26,10 +28,14 @@ $(document).ready(() => {
           ${user.handle}
         </div>
       </header>`);
+
     const $middle = $('<div class="tweet">');
+
     const $tweet = $('<p>');
-    $tweet.text(content.text);
+    $tweet.text(content.text); // Used .text to escape cross-site scripting
+
     $middle.append($tweet);
+
     const $footer = $(`
       <footer>
         <p>${timeago.format(created_at)}</p>
@@ -40,6 +46,7 @@ $(document).ready(() => {
           </div>
       </footer>
     `);
+
     $tweetContainer.append($header);
     $tweetContainer.append($middle);
     $tweetContainer.append($footer);
@@ -47,23 +54,31 @@ $(document).ready(() => {
     return $tweetContainer;
   };
 
-  const loadTweets = () => {
+  // Function that gets the initial tweets from /tweets and uses the renderTweets function to create html markups and display it
+  const loadInitialTweets = () => {
     $.ajax({ url: '/tweets', method: 'GET' })
       .then((res) => renderTweets(res));
   };
-  loadTweets();
 
+  // Calling the function to show in the page once the page is loaded
+  loadInitialTweets();
+
+  // Function that gets the most recent posted tweet from /tweets and uses the renderTweets function to create html markups and display it
   const loadNewTweet = () => {
     $.ajax({ url: '/tweets', method: 'GET' })
       .then((res) => renderTweets([res[res.length - 1]]));
   };
 
+  // Event handler when a tweet is submitted
   $('.tweet-form').submit(function(event) {
     event.preventDefault();
-    $('.error').slideUp();
-    $('.error p').empty();
+    $('.error').slideUp(); // Error message is gone when pressed submit
+    $('.error p').empty(); // Error message in the paragraph is erased
+
     const form = $(this);
+
     const text = form.find('#tweet-text');
+
     if (text.val().length > 140) {
       $('.error p').append('Your tweet exceeds the character limit of 140!');
       $('.error').slideDown();
@@ -72,15 +87,16 @@ $(document).ready(() => {
       $('.error').slideDown();
     } else {
       const serialized = form.serialize();
+      // jquery AJAX for the POST route that sends the submitted tweet as a serialized data (query string) to /tweets
       $.ajax({
         method: 'POST',
         url: '/tweets',
         data: serialized
       })
         .then(() => {
-          text.val('');
-          form.find('.counter').val(140);
-          loadNewTweet();
+          text.val(''); // Once submitted, the textarea empties
+          form.find('.counter').val(140); // The counter resets
+          loadNewTweet(); // The loadNewTweet function is called to load the new tweet without refreshing
         });
     }
   });
@@ -97,15 +113,11 @@ $(document).ready(() => {
   );
 
   $('.navbar-menu').click(function() {
-    $('html, body').animate({
-      scrollTop: 400
-    }, 2000);
+    $('.tweet-form').toggleClass('.hidden')
   });
 
   $(document).scroll(function() {
     const navbar = $(document).find('.navbar-top');
     navbar.toggleClass('scrolled', $(this).scrollTop() > navbar.height());
-
   });
-
 });
