@@ -2,6 +2,8 @@
 
 Tweeter is a simple, single-page Twitter clone that uses jQuery, HTML5, and CSS3 to build the front-end section.
 
+You can type in tweets and they will display without refreshing. The navbar has a toggle button that shows or hides the form that allows you to create new tweets. Additionally, a button appears when you scroll down, and when clicked it scrolls all the way to the top. Finally, the page was made to be responsive, meaning there is a mobile and desktop display version.
+
 This repository was a starter code for the project: I forked and clone this repository, then built upon it to practice my HTML, CSS, JS, jQuery and AJAX front-end skills. Node, Express back-end skills were already part of the template.
 
 ## Screenshots
