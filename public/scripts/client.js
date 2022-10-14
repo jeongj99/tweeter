@@ -113,7 +113,8 @@ $(document).ready(() => {
   );
 
   $('.navbar-menu').click(function() {
-    $('.tweet-form').toggleClass('.hidden')
+    $('.new-tweet').slideToggle();
+    $('.new-tweet').find('#tweet-text').focus();
   });
 
   $(document).scroll(function() {
